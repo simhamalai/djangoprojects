@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{%static 'result.css'%}">
+  </head>
+  <body>
+    <div class="bgcont">
+      <h1>Hello, Sreekanth</h1>
+      {%if employees%}
+      <table border='2'>
+        <thead>
+            <th>Employee Number</th>
+            <th>Employee Name</th>
+            <th>Employee salary</th>
+            <th>Employee Mobile</th>
+            <th>Employee Email</th>
+            <th>Employee Address</th>
+        </thead>
+        {%for i in employees%}
+        <tr>
+          <td>{{i.eno}}</td>
+          <td>{{i.ename}}</td>
+          <td>{{i.esal}}</td>
+          <td>{{i.emobile}}</td>
+          <td>{{i.eemail}}</td>
+          <td>{{i.eaddress}}</td>
+        </tr>
+        {%endfor%}
+      </table>
+      {%endif%}
+      <h4>
+        <a href="/register">Add new record</a>
+      </h1>
+    </div>
+  </body>
+</html>
